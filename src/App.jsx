@@ -1,6 +1,5 @@
-//Acts as the main container
+//Root Component
 import React, {useState} from "react";
-//Renders the Gallery component
 import Gallery from "./components/Gallery";
 
 //Root component of the app
