@@ -1,13 +1,13 @@
 //Tour List Component
 import React, { useState, useEffect } from "react";
-import TourCard from "./TourCard.jsx"; 
+import TourCard from "./TourCard.jsx"; //Importing the TourCard component
 
 function Gallery({tours, setTours, onRemove}) {
-    //Store data in useState
+    //Local state for loading and error handling
     const [loading, setLoading] = useState(true); //Show loading message
     const [error, setError] = useState(null); //Catch error if fetching fails
     
-    //Use useEffect to call the API
+    //Function to fetch tour data from API
     const fetchTours = async () => {
         try {
             const response = await fetch("https://www.course-api.com/react-tours-project");
@@ -15,25 +15,25 @@ function Gallery({tours, setTours, onRemove}) {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            setTours(data); //Lifting state to App component
+            setTours(data); //Lifting data to App component
             setLoading(false);
         } catch (error) {
             setError(true);
             setLoading(false);
         }
     };
-
+    //Use useEffect to fetch tours when the component mounts
    useEffect(() => {
         fetchTours();
     }, []);
-
+    //Conditional UI rendering based on state
     if (loading) {
         return <h2>Loading...</h2>;
     };
     if (error) {
         return <h2>Something went wrong!</h2>;
     };
-    //If no tours are available
+    //If all tours are removed, show refresh button
     if (tours.length === 0) {
         return (
             <section>

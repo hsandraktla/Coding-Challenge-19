@@ -1,7 +1,9 @@
 //Single Tour Component
 import React, { useState } from "react";
 
+//Individual TourCard component
 function TourCard ({ id, name, info, image, price, onRemove }) {
+    //State for toggling "Read More" / "Show Less"
     const [readMore, setReadMore] = useState(false); //State to toggle read more
 
     return (
