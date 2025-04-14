@@ -1,0 +1,172 @@
+/* ------------------ Reset + Base ------------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fdf6ef;
+    color: #4a403a;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  
+  main {
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  /* ------------------ Title Section ------------------ */
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #5a4b3c;
+    border-bottom: 3px solid #e0d6c8;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    animation: fadeIn 1s ease;
+  }
+  
+  /* ------------------ Tours Grid ------------------ */
+  .tours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  /* ------------------ Tour Card ------------------ */
+  .tour-card {
+    background-color: #fffaf5;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  .tour-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .tour-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee1d6;
+  }
+  
+  .tour-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .tour-price {
+    background-color: #e4d5c0;
+    color: #5a4b3c;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+  }
+  
+  .tour-card p {
+    padding: 0 1.5rem 1rem;
+    font-size: 0.95rem;
+    color: #5a4b3c;
+  }
+  
+  /* ------------------ Read More Button ------------------ */
+  .read-more {
+    margin-left: 0.5rem;
+    color: #aa8560;
+    background: transparent;
+    font-size: 0.9rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .read-more:hover {
+    color: #8a6a4f;
+    text-decoration: underline;
+  }
+  
+  /* ------------------ Remove Button ------------------ */
+  .remove-button {
+    display: block;
+    width: calc(100% - 3rem);
+    margin: 1rem auto 2rem;
+    padding: 0.8rem 0;
+    background-color: #f0e6d8;
+    border-radius: 0.5rem;
+    color: #5a4b3c;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .remove-button:hover {
+    background-color: #e8dac8;
+    transform: translateY(-2px);
+  }
+  
+  /* ------------------ Refresh Button (Empty State) ------------------ */
+  .empty {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .refresh-btn {
+    background-color: #dbcbbf;
+    color: #4d3e34;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .refresh-btn:hover {
+    background-color: #cbbbad;
+  }
+  
+  /* ------------------ Animations ------------------ */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
